@@ -1,0 +1,46 @@
+{
+  "variables": {
+    "do_client_id": null,
+    "do_api_key": null
+  },
+
+  "builders": [ {
+    "type": "digitalocean",
+    "client_id": "{{user `do_client_id`}}",
+    "api_key": "{{user `do_api_key`}}",
+    "snapshot_name": "dev-box-{{isotime}}",
+    "region_id": 3,
+    "image_id": 350076
+  } ],
+
+  "provisioners": [
+    {
+      "type": "chef-solo",
+      "cookbook_paths": [ "vendor", "site-cookbooks" ],
+      "data_bags_path": "data_bags",
+      "run_list": [ "recipe[dev_droplet]" ],
+      "json": {
+        "developer": {
+          "projects": {
+            "dotfiles":      { "repository": "https://github.com/fgrehm/dotfiles.git" },
+            "vimfiles":      { "repository": "https://github.com/fgrehm/vimfiles.git" },
+            "vagrant-lxc":   { "repository": "https://github.com/fgrehm/vagrant-lxc.git" },
+            "ventriloquist": { "repository": "https://github.com/fgrehm/ventriloquist.git" },
+            "vagrant":       { "repository": "https://github.com/mitchellh/vagrant.git" },
+            "packer":        { "repository": "https://github.com/mitchellh/packer.git" },
+            "docker":        { "repository": "https://github.com/dotcloud/docker.git" }
+          },
+          "vagrant_lxc_boxes": {
+            "precise64": "http://bit.ly/vagrant-lxc-precise64-2013-09-28",
+            "quantal64": "http://bit.ly/vagrant-lxc-quantal64-2013-09-28",
+            "raring64":  "http://bit.ly/vagrant-lxc-raring64-2013-09-28-"
+          }
+        }
+      }
+    },
+    {
+      "type": "shell",
+      "inline": ["apt-get upgrade -y"]
+    }
+  ]
+}

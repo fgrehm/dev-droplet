@@ -1,0 +1,5 @@
+{
+  "id": "example",
+  "groups": [ "sudo", "rvm" ],
+  "uid": 1001
+}

@@ -1,0 +1,6 @@
+.env.vagrant
+.librarian
+variables.json
+data_bags/users/developer.json
+tmp
+vendor

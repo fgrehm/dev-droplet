@@ -1,0 +1,7 @@
+{
+  "id": "developer",
+  "groups": [ "sudo", "rvm" ],
+  "uid": 1000,
+  "ssh_keys": "SSH_PUBLIC_KEY",
+  "password": "ENCRIPTED_PASSWORD"
+}

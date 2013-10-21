@@ -1,0 +1,9 @@
+site "http://community.opscode.com/api/v1"
+
+cookbook 'apt'
+cookbook 'user', github: 'fnichol/chef-user'
+cookbook 'openssh', github: 'opscode-cookbooks/openssh'
+cookbook 'fail2ban'
+cookbook 'sudo'
+cookbook 'rvm', github: 'fnichol/chef-rvm'
+cookbook 'golang'

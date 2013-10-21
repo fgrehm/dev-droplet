@@ -1,0 +1,59 @@
+SITE
+  remote: http://community.opscode.com/api/v1
+  specs:
+    apt (2.2.0)
+    build-essential (1.4.2)
+    chef_gem (0.1.0)
+    chef_handler (1.1.4)
+    dmg (2.0.2)
+    fail2ban (1.2.4)
+      yum (>= 0.0.0)
+    git (2.7.0)
+      build-essential (>= 0.0.0)
+      dmg (>= 0.0.0)
+      runit (>= 1.0.0)
+      windows (>= 0.0.0)
+      yum (>= 0.0.0)
+    golang (1.1.2)
+      git (>= 0.0.0)
+    iptables (0.12.0)
+    runit (1.2.0)
+      build-essential (>= 0.0.0)
+      yum (>= 0.0.0)
+    sudo (2.2.0)
+    windows (1.10.0)
+      chef_handler (>= 0.0.0)
+    yum (2.3.2)
+
+GIT
+  remote: https://github.com/fnichol/chef-rvm
+  ref: master
+  sha: 59dc482e2c39db4c378e79e10569f1becdc4bc43
+  specs:
+    rvm (0.9.1)
+      chef_gem (>= 0.0.0)
+
+GIT
+  remote: https://github.com/fnichol/chef-user
+  ref: master
+  sha: ce45d05e13491a82cbb5a2c36292391f3a1aaa36
+  specs:
+    user (0.3.1)
+
+GIT
+  remote: https://github.com/opscode-cookbooks/openssh
+  ref: master
+  sha: 2740050f455f3046a49cfeae0965a737f7c3bce6
+  specs:
+    openssh (1.2.3)
+      iptables (>= 0.0.0)
+
+DEPENDENCIES
+  apt (>= 0)
+  fail2ban (>= 0)
+  golang (>= 0)
+  openssh (>= 0)
+  rvm (>= 0)
+  sudo (>= 0)
+  user (>= 0)
+
